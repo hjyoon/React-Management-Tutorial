@@ -77,6 +77,7 @@ class App extends Component {
                 <TableCell>생년월일</TableCell>
                 <TableCell>성별</TableCell>
                 <TableCell>직업</TableCell>
+                <TableCell>설정</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -84,6 +85,7 @@ class App extends Component {
                 this.state.customers ? this.state.customers.map(c => {
                   return (
                     <Customer 
+                      stateRefresh={this.stateRefresh}
                       key={c.id}
                       id={c.id}
                       image={c.image}
@@ -108,42 +110,5 @@ class App extends Component {
     );
   }
 }
-
-// function App() {
-//   const { classes } = this.props;
-//   return (
-//     <Paper className={classes.root}>
-//       <Table className={classes.table}>
-//         <TableHead>
-//           <TableRow>
-//             <TableCell>번호</TableCell>
-//             <TableCell>이미지</TableCell>
-//             <TableCell>이름</TableCell>
-//             <TableCell>생년월일</TableCell>
-//             <TableCell>성별</TableCell>
-//             <TableCell>직업</TableCell>
-//           </TableRow>
-//         </TableHead>
-//         <TableBody>
-//           {
-//             customers.map(c => {
-//               return (
-//                 <Customer 
-//                   key={c.id}
-//                   id={c.id}
-//                   image={c.image}
-//                   name={c.name}
-//                   birthday={c.birthday}
-//                   gender={c.gender}
-//                   job={c.job}
-//                 />
-//               );
-//             })
-//           }
-//         </TableBody>
-//       </Table>
-//     </Paper>
-//   );
-// }
 
 export default withStyles(styles)(App);
